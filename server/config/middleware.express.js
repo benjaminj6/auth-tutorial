@@ -39,7 +39,9 @@ module.exports = function(app) {
             user.validatePassword(password, function(err, isValid) {
                 if (err) {
                     return done(err);
-                } if (!isValid) {
+                } 
+
+                if (!isValid) {
                     return done(null, false, {
                         message: 'Incorrect password.'
                     });

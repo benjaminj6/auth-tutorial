@@ -6,5 +6,6 @@ var userRouter = require('../api/user/user.router');
 */
 module.exports = function(app) {
 	app.use('/auth', authRouter);
-	app.use('/signup', userRouter);
+	
+	app.use('/user', userRouter);
 };
