@@ -4,7 +4,6 @@ var bcrypt = require('bcrypt');
 var Controller = {};
 
 Controller.signup = function(req, res) {
-	var username = req.body.username;
 	var password = req.body.password;
 	var saltRounds = 10;
 
@@ -14,9 +13,10 @@ Controller.signup = function(req, res) {
 			return;
 		} else {
 			password = hash;
+			var username = req.body.username;
 		
 			// had to put inside the else statement bc of async callback on bcrypt.hash
-			// ask RE: whether there is a better way to do this
+			// ASK RE: whether there is a cleaner way to do this
 			User.create({username: username, password: password}, function(err, user) {
 				if (err) {
 					res.status(500).json(err);
