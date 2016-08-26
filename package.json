@@ -4,7 +4,8 @@
   "description": "Basic authentication tutorial",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "start": "nodemon server/server.js"
   },
   "author": "Benjamin Johnson",
   "license": "ISC",
@@ -12,9 +13,12 @@
     "bcrypt": "^0.8.7",
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
+    "cookie-parser": "1.4.3",
     "express": "^4.14.0",
+    "express-session": "1.14.0",
     "mongoose": "^4.5.9",
     "passport": "^0.3.2",
-    "passport-http": "^0.3.0"
+    "passport-http": "^0.3.0",
+    "passport-local": "1.0.0"
   }
 }
